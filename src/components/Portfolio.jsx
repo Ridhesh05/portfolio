@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Portfolio.css';
 import profilePic from './second.png';
 import { FaGithub, FaEnvelope } from 'react-icons/fa';
-import { SiCplusplus,SiGo, SiDart, SiDjango, SiDocker, SiKubernetes, SiExpress, SiPostgresql, SiMysql, SiPython, SiJavascript } from 'react-icons/si';
-import { useEffect } from 'react';
+import {
+  SiCplusplus, SiGo, SiDart, SiDjango, SiDocker,
+  SiKubernetes, SiExpress, SiPostgresql, SiMysql,
+  SiPython, SiJavascript
+} from 'react-icons/si';
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState('WORK');
@@ -13,11 +16,15 @@ export default function Portfolio() {
     { id: '01', label: 'LINKEDIN' },
   ];
 
+  const externalLinks = {
+    LINKEDIN: 'https://linkedin.com/in/ridhesh05',
+  };
+
   const projects = [
     {
       id: 1,
       title: 'Smart Personal Finance Tracker',
-      tech: 'Django, Docker, SQLite,React ,tailwind css',
+      tech: 'Django, Docker, SQLite, React, Tailwind CSS',
       description: 'Personal Finance Tracker App',
       live: false,
       link: 'https://github.com/Ridhesh05/FJ-BE-R2-Ridhesh-Chauhan-IIIT-Pune'
@@ -50,22 +57,22 @@ export default function Portfolio() {
 
   const handleNavClick = (label) => {
     setActiveSection(label);
-    if (label === 'LINKED IN') {
-      window.open('https://linkedin.com/in/ridhesh05', '_blank');
+    if (externalLinks[label]) {
+      window.open(externalLinks[label], '_blank');
     }
   };
-useEffect(() => {
-  const cursor = document.getElementById('cursor-dot');
 
-  const moveCursor = (e) => {
-    cursor.style.top = `${e.clientY}px`;
-    cursor.style.left = `${e.clientX}px`;
-  };
+  useEffect(() => {
+    const cursor = document.getElementById('cursor-dot');
 
-  window.addEventListener('mousemove', moveCursor);
+    const moveCursor = (e) => {
+      cursor.style.top = `${e.clientY}px`;
+      cursor.style.left = `${e.clientX}px`;
+    };
 
-  return () => window.removeEventListener('mousemove', moveCursor);
-}, []);
+    window.addEventListener('mousemove', moveCursor);
+    return () => window.removeEventListener('mousemove', moveCursor);
+  }, []);
 
   return (
     <div className="container">
@@ -81,7 +88,8 @@ useEffect(() => {
           </div>
         </div>
 
-         <div className="nav">
+        <div className="nav">
+          {/* Navigation Items */}
           {navItems.map((item) => (
             <div key={item.id} className="nav-item">
               <span className="nav-id">{item.id}</span>
@@ -109,31 +117,30 @@ useEffect(() => {
         </div>
       </div>
 
-      {/* Right Section (Projects) */}
+      {/* Right Section (Projects & Skills) */}
       <div className="right-section">
         <h2 className="projects-title">Projects</h2>
         <div className="projects-list">
           {projects.map((project) => (
             <div
-  key={project.id}
-  className="project-card"
-  onClick={() => window.open(project.link, '_blank')}
-  style={{ cursor: 'pointer' }}
->
-  <h3>{project.title}</h3>
-  <p className="tech">{project.tech}</p>
-  <p>{project.description}</p>
-  {project.live && (
-    <a
-      href={project.link}
-      className="live-link"
-      onClick={(e) => e.stopPropagation()}
-    >
-      👁 Live
-    </a>
-  )}
-</div>
-
+              key={project.id}
+              className="project-card"
+              onClick={() => window.open(project.link, '_blank')}
+              style={{ cursor: 'pointer' }}
+            >
+              <h3>{project.title}</h3>
+              <p className="tech">{project.tech}</p>
+              <p>{project.description}</p>
+              {project.live && (
+                <a
+                  href={project.link}
+                  className="live-link"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  👁 Live
+                </a>
+              )}
+            </div>
           ))}
         </div>
 
@@ -142,7 +149,6 @@ useEffect(() => {
           <h2 className="skills-title">Skills & Tools</h2>
           <div className="skills-icons">
             <SiCplusplus title="C++" />
-            {/* <SiCsharp title="C#" /> */}
             <SiPython title="Python" />
             <SiJavascript title="JavaScript" />
             <SiGo title="Go" />
@@ -156,9 +162,9 @@ useEffect(() => {
           </div>
         </div>
       </div>
-    <div className="cursor-dot" id="cursor-dot"></div>
 
+      {/* Custom Cursor */}
+      <div className="cursor-dot" id="cursor-dot"></div>
     </div>
-
   );
 }
