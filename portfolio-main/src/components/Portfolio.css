@@ -281,3 +281,70 @@ body {
   z-index: 9999;
   box-shadow: 0 0 14px #38bdf8, 0 0 32px rgba(56, 189, 248, 0.6);
 }
+
+/* Mobile Responsive Layout */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    overflow: auto;
+  }
+
+  .left-section, 
+  .right-section {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .intro-text p {
+    font-size: 0.9rem;
+  }
+
+  .nav-item {
+    margin-bottom: 10px;
+  }
+
+  .projects-list {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    height: auto;
+  }
+
+  .project-card:hover {
+    height: auto;
+  }
+
+  .skills-icons {
+    grid-template-columns: repeat(3, 1fr);
+    font-size: 2.4rem;
+    gap: 10px;
+  }
+
+  .leetcode-stats-card {
+    max-width: 100%;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .skills-icons {
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 2rem;
+  }
+
+  .leetcode-stats-card {
+    font-size: 0.8rem;
+    padding: 14px;
+  }
+}
