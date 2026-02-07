@@ -148,7 +148,7 @@ export default function Portfolio() {
         <div>
 
           <div className="hero-sub">
-            <span className="role">🚀 Backend & Cloud Engineer</span>
+            <span className="role"><span role="img" aria-label="rocket">🚀</span> Backend & Cloud Engineer</span>
             <span className="status">
               Open to Internships & Full-Time Roles
             </span>
@@ -181,7 +181,7 @@ export default function Portfolio() {
 
           {/* Quick Stats */}
 
-          
+
         </div>
 
         {/* NAV */}
@@ -195,9 +195,8 @@ export default function Portfolio() {
               <span className="nav-line"></span>
 
               <span
-                className={`nav-label ${
-                  activeSection === item.label ? "active" : ""
-                }`}
+                className={`nav-label ${activeSection === item.label ? "active" : ""
+                  }`}
                 onClick={() => handleNavClick(item.label)}
               >
                 {item.label}
@@ -211,7 +210,7 @@ export default function Portfolio() {
 
         <div className="link-icons-row">
 
-          <a href="https://github.com/Ridhesh05" target="_blank" rel="noreferrer">
+          <a href="https://github.com/Ridhesh05" target="_blank" rel="noopener noreferrer">
             <FaGithub className="icon" /> GitHub
           </a>
 
@@ -219,15 +218,15 @@ export default function Portfolio() {
             <FaEnvelope className="icon" /> Email
           </a>
 
-          <a href="https://leetcode.com/u/_Ridhesh_0529/" target="_blank">
+          <a href="https://leetcode.com/u/_Ridhesh_0529/" target="_blank" rel="noopener noreferrer">
             <SiLeetcode className="icon" /> LeetCode
           </a>
 
-          <a href="https://www.codechef.com/users/ridhesh" target="_blank">
+          <a href="https://www.codechef.com/users/ridhesh" target="_blank" rel="noopener noreferrer">
             <SiCodechef className="icon" /> CodeChef
           </a>
 
-          <a href="https://codeforces.com/profile/rc07" target="_blank">
+          <a href="https://codeforces.com/profile/rc07" target="_blank" rel="noopener noreferrer">
             <SiCodeforces className="icon" /> Codeforces
           </a>
 
@@ -249,7 +248,7 @@ export default function Portfolio() {
             <div
               key={project.id}
               className="project-card"
-               title="Tap to open project"
+              title="Tap to open project"
               onClick={() => window.open(project.link, "_blank")}
             >
 
@@ -305,15 +304,15 @@ export default function Portfolio() {
           <div className="leetcode-stats-divider"></div>
 
           <div className="leetcode-stats-line">
-            🧠 1000+ Problems Solved
+            <span role="img" aria-label="brain">🧠</span> 1000+ Problems Solved
           </div>
 
           <div className="leetcode-stats-line">
-            🔥 Top 2.65% Global
+            <span role="img" aria-label="fire">🔥</span> Top 2.65% Global
           </div>
 
           <div className="leetcode-stats-line">
-            🥇 338 Easy | 564 Medium | 99 Hard
+            <span role="img" aria-label="medal">🥇</span> 338 Easy | 564 Medium | 99 Hard
           </div>
 
         </div>
@@ -325,17 +324,17 @@ export default function Portfolio() {
           <h2>Contact Me</h2>
 
           <p>
-            📧 ridheshchauhan7@gmail.com
+            <span role="img" aria-label="email">📧</span> ridheshchauhan7@gmail.com
             <button onClick={copyEmail} className="copy-btn">
               Copy
             </button>
           </p>
 
-          <p>💼 linkedin.com/in/ridhesh05</p>
+          <p><span role="img" aria-label="Briefcase">💼</span> linkedin.com/in/ridhesh05</p>
 
-          <p>🐙 github.com/Ridhesh05</p>
+          <p><span role="img" aria-label="Octopus">🐙</span> github.com/Ridhesh05</p>
 
-          <p>📍 Pune, India</p>
+          <p><span role="img" aria-label="Location">📍</span> Pune, India</p>
 
         </div>
 
