@@ -1,0 +1,567 @@
+/* ======================
+   GLOBAL
+====================== */
+
+body {
+  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
+  background-color: #0f0f0f;
+  color: white;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  animation: pageLoad 0.8s ease-out;
+}
+
+@keyframes pageLoad {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ======================
+   LEFT SECTION
+====================== */
+
+.left-section {
+  width: 50%;
+  padding: 40px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Hero Area */
+
+.hero-sub {
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.role {
+  font-size: 1rem;
+  color: #38bdf8;
+  font-weight: 500;
+}
+
+.status {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.title {
+  font-size: 2.9rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  line-height: 1.2;
+}
+
+/* Intro */
+
+.intro-text p {
+  font-size: 1rem;
+  color: #cbd5e1;
+  margin-bottom: 10px;
+  max-width: 480px;
+  line-height: 1.5;
+}
+
+/* Quick Stats */
+
+.quick-stats {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+/* ======================
+   NAVIGATION
+====================== */
+
+.nav {
+  margin-top: 20px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.nav-id {
+  width: 40px;
+  text-align: right;
+  margin-right: 10px;
+  color: #aaa;
+  font-size: 0.85rem;
+}
+
+.nav-line {
+  width: 100px;
+  height: 1px;
+  margin: 0 18px;
+  background-color: #555;
+  transition: all 0.3s ease;
+}
+
+.nav-item:hover .nav-line {
+  width: 200px;
+  background-color: #38bdf8;
+}
+
+.nav-label {
+  font-size: 0.9rem;
+  color: #ddd;
+  transition: 0.3s;
+}
+
+.nav-label.active,
+.nav-label:hover {
+  color: #fff;
+}
+
+/* ======================
+   SOCIAL LINKS
+====================== */
+
+.link-icons-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-size: 0.95rem;
+  margin-top: 20px;
+}
+
+.link-icons-row a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #eaeaea;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.link-icons-row a:hover {
+  color: #38bdf8;
+  transform: translateY(-2px);
+}
+
+.icon {
+  font-size: 1.1rem;
+}
+
+/* ======================
+   RIGHT SECTION
+====================== */
+
+.right-section {
+  width: 50%;
+  padding: 40px 50px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+/* ======================
+   PROJECTS
+====================== */
+
+.projects-title {
+  font-size: 1.3rem;
+  margin-bottom: 14px;
+  color: #f2f2f2;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.projects-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+/* Glass Project Cards */
+
+.project-card {
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  height: 95px;
+  overflow: hidden;
+  transition: 0.35s ease;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.project-card:hover {
+  background: rgba(255, 255, 255, 0.14);
+  height: 175px;
+  transform: translateY(-4px) scale(1.03);
+  border-color: #38bdf8;
+  box-shadow: 0 0 25px rgba(56,189,248,0.15);
+}
+
+.project-head h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.project-head .tech {
+  font-size: 12px;
+  opacity: 0.75;
+  margin-top: 3px;
+}
+
+.project-details {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  margin-top: 10px;
+}
+
+.project-card:hover .project-details {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.project-details ul {
+  padding-left: 16px;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.project-details li {
+  margin-bottom: 4px;
+}
+
+/* ======================
+   SKILLS
+====================== */
+
+.skills {
+  margin-top: 25px;
+}
+
+.skills-title {
+  font-size: 1.3rem;
+}
+
+.skills-icons {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  font-size: 3.4rem;
+  gap: 16px;
+  margin-top: 14px;
+  justify-items: center;
+
+  padding: 18px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.skills-icons svg {
+  transition: 0.3s ease;
+}
+
+.skills-icons svg:hover {
+  filter: drop-shadow(0 0 8px #38bdf8);
+  transform: scale(1.1);
+}
+
+/* ======================
+   LEETCODE CARD
+====================== */
+
+.leetcode-stats-card {
+  margin-top: 25px;
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: rgba(247, 223, 30, 0.08);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(247, 223, 30, 0.35);
+  box-shadow: 0 0 40px rgba(247, 223, 30, 0.15);
+  max-width: 380px;
+  font-size: 0.9rem;
+  transition: 0.3s ease;
+}
+
+.leetcode-stats-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 0 60px rgba(247, 223, 30, 0.25);
+}
+
+.leetcode-stats-title {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  color: #eee;
+  margin-bottom: 6px;
+}
+
+.leetcode-stats-divider {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(to right, #f7df1e, transparent);
+  margin-bottom: 8px;
+}
+
+.leetcode-stats-line {
+  margin: 4px 0;
+  color: #fafafa;
+  opacity: 0.9;
+}
+
+/* ======================
+   CONTACT BOX
+====================== */
+
+.contact-box {
+  margin-top: 30px;
+  padding: 18px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.contact-box h2 {
+  margin-bottom: 10px;
+}
+
+.contact-box p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: #d1d5db;
+}
+
+/* Copy Button */
+
+.copy-btn {
+  margin-left: 8px;
+  background: transparent;
+  border: 1px solid #38bdf8;
+  color: #38bdf8;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.copy-btn:hover {
+  background: #38bdf8;
+  color: black;
+}
+
+/* ======================
+   CURSOR
+====================== */
+
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  background-color: #38bdf8;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.05s;
+  z-index: 9999;
+  box-shadow: 0 0 14px #38bdf8, 0 0 32px rgba(56,189,248,0.6);
+}
+
+/* ======================
+   ANIMATIONS
+====================== */
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ======================
+   MOBILE VIEW
+====================== */
+
+@media (max-width: 768px) {
+
+  body {
+    overflow-y: auto;
+  }
+
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  /* Sections */
+
+  .left-section,
+  .right-section {
+    width: 100%;
+    padding: 25px 20px;
+  }
+
+  /* Hero */
+
+  .title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .hero-sub {
+    align-items: center;
+    text-align: center;
+  }
+
+  .intro-text p {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .quick-stats {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Navigation */
+
+  .nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .nav-item {
+    margin-bottom: 0;
+  }
+
+  .nav-line {
+    display: none;
+  }
+
+  /* Social */
+
+  .link-icons-row {
+    justify-content: center;
+  }
+
+  /* Projects */
+
+  .projects-list {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    height: auto;
+  }
+
+  .project-card:hover {
+    height: auto;
+    transform: none;
+  }
+
+  .project-details {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Skills */
+
+  .skills-icons {
+    grid-template-columns: repeat(4, 1fr);
+    font-size: 2.6rem;
+  }
+
+  /* LeetCode */
+
+  .leetcode-stats-card {
+    max-width: 100%;
+  }
+
+  /* Contact */
+
+  .contact-box {
+    text-align: center;
+  }
+
+  /* Cursor */
+
+  .cursor-dot {
+    display: none;
+  }
+}
+/* ======================
+   TABLET VIEW
+====================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%;
+    padding: 35px;
+  }
+
+  .title {
+    font-size: 2.3rem;
+  }
+
+  .projects-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skills-icons {
+    grid-template-columns: repeat(5, 1fr);
+    font-size: 3rem;
+  }
+
+  .cursor-dot {
+    display: none;
+  }
+}
